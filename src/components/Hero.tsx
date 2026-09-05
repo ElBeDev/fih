@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
             We build, acquire, and manage businesses with strong potential
-            for long-term growth &mdash; across technology, healthcare,
+            for long-term growth across technology, healthcare,
             manufacturing, financial services, real estate, and energy.
           </p>
         </div>

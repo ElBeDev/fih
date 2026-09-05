@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ABOUT_CARDS } from "@/lib/content";
+import Reveal from "@/components/Reveal";
 
 export default function About() {
   return (
@@ -15,55 +16,52 @@ export default function About() {
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/5 to-transparent" />
 
-          <span className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-1.5 text-xs font-medium text-ink">
-            About Us
-          </span>
-
           <div className="absolute inset-x-0 bottom-0 p-6">
             <p className="font-display max-w-sm text-lg font-semibold leading-snug text-white sm:text-xl">
               We are a holding company building innovative, sustainable, and
               lasting businesses across the global economy.
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/65">
-              Active ownership across a diversified portfolio &mdash; from
+              Active ownership across a diversified portfolio, from
               strategic direction to operational support and resources.
             </p>
           </div>
         </div>
 
         <div className="flex flex-col gap-3">
-          {ABOUT_CARDS.map((card) => {
+          {ABOUT_CARDS.map((card, i) => {
             const Icon = card.icon;
             const dark = card.variant === "dark";
             return (
-              <div
-                key={card.title}
-                className={`flex-1 rounded-[22px] p-6 sm:p-7 ${
-                  dark ? "bg-forest text-white" : "bg-paper text-ink"
-                }`}
-              >
-                <span
-                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    dark ? "bg-white/10" : "bg-yellow"
+              <Reveal key={card.title} delay={i * 0.08} className="flex-1">
+                <div
+                  className={`h-full rounded-[22px] p-6 sm:p-7 ${
+                    dark ? "bg-forest text-white" : "bg-paper text-ink"
                   }`}
                 >
-                  <Icon
-                    size={20}
-                    strokeWidth={1.75}
-                    className={dark ? "text-white" : "text-ink"}
-                  />
-                </span>
-                <h3 className="font-display mt-5 text-lg font-semibold">
-                  {card.title}
-                </h3>
-                <p
-                  className={`mt-2 text-sm leading-relaxed ${
-                    dark ? "text-white/60" : "text-muted"
-                  }`}
-                >
-                  {card.description}
-                </p>
-              </div>
+                  <span
+                    className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+                      dark ? "bg-white/10" : "bg-yellow"
+                    }`}
+                  >
+                    <Icon
+                      size={20}
+                      strokeWidth={1.75}
+                      className={dark ? "text-white" : "text-ink"}
+                    />
+                  </span>
+                  <h3 className="font-display mt-5 text-lg font-semibold">
+                    {card.title}
+                  </h3>
+                  <p
+                    className={`mt-2 text-sm leading-relaxed ${
+                      dark ? "text-white/60" : "text-muted"
+                    }`}
+                  >
+                    {card.description}
+                  </p>
+                </div>
+              </Reveal>
             );
           })}
         </div>

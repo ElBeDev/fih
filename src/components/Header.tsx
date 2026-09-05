@@ -38,7 +38,7 @@ export default function Header() {
           href="#contact"
           className="hidden rounded-full bg-yellow px-6 py-2.5 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5 lg:inline-block"
         >
-          Contact Us
+          Get in Touch
         </a>
 
         <button
@@ -71,7 +71,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-1 rounded-2xl bg-yellow px-4 py-3 text-center text-sm font-semibold text-ink"
             >
-              Contact Us
+              Get in Touch
             </a>
           </nav>
         </div>

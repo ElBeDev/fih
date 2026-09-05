@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { APPROACH_PILLARS } from "@/lib/content";
+import Reveal from "@/components/Reveal";
 
 export default function Approach() {
   return (
@@ -18,10 +19,7 @@ export default function Approach() {
           </div>
 
           <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
-            <span className="inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium text-white/80">
-              Our Approach
-            </span>
-            <h2 className="font-display mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
               &ldquo;Long-term value is created through active
               ownership.&rdquo;
             </h2>
@@ -33,13 +31,18 @@ export default function Approach() {
             </p>
 
             <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-              {APPROACH_PILLARS.map((pillar) => (
-                <li key={pillar} className="flex items-start gap-2.5">
+              {APPROACH_PILLARS.map((pillar, i) => (
+                <Reveal
+                  key={pillar}
+                  as="li"
+                  delay={i * 0.04}
+                  className="flex items-start gap-2.5"
+                >
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow">
                     <Check size={12} strokeWidth={3} className="text-ink" />
                   </span>
                   <span className="text-sm text-white/80">{pillar}</span>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
