@@ -1,44 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/content";
+import Logo from "@/components/Logo";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "bg-navy-deep/95 backdrop-blur shadow-[0_1px_0_0_rgba(255,255,255,0.08)]"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container-fs flex h-20 items-center justify-between">
-        <a href="#home" className="flex flex-col leading-none">
-          <span className="font-display text-xl tracking-[0.08em] text-white">
-            FALLSTONE
-          </span>
-          <span className="mt-1 text-[10px] uppercase tracking-[0.35em] text-gold-light">
-            International Holdings
+    <header className="sticky top-4 z-50 px-4 lg:px-6">
+      <div className="mx-auto flex max-w-340 items-center justify-between rounded-full border border-black/5 bg-white/90 px-3 py-2.5 shadow-[0_8px_30px_-12px_rgba(20,23,20,0.25)] backdrop-blur">
+        <a href="#home" className="flex items-center gap-2 pl-2">
+          <Logo />
+          <span className="font-display text-lg font-bold tracking-tight text-ink">
+            Fallstone
           </span>
         </a>
 
-        <nav className="hidden items-center gap-10 lg:flex">
-          {NAV_LINKS.map((link) => (
+        <nav className="hidden items-center gap-1 rounded-full lg:flex">
+          {NAV_LINKS.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/85 transition-colors hover:text-gold-light"
+              className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
+                i === 0
+                  ? "bg-forest text-white"
+                  : "text-ink/70 hover:text-ink"
+              }`}
             >
               {link.label}
             </a>
@@ -47,7 +36,7 @@ export default function Header() {
 
         <a
           href="#contact"
-          className="hidden rounded-sm border border-gold-light/60 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gold-light hover:text-navy-deep lg:inline-block"
+          className="hidden rounded-full bg-yellow px-6 py-2.5 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5 lg:inline-block"
         >
           Contact Us
         </a>
@@ -55,22 +44,24 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="text-white lg:hidden"
+          className="rounded-full p-2 text-ink lg:hidden"
           aria-label="Toggle menu"
         >
-          {open ? <X size={26} /> : <Menu size={26} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-navy-deep lg:hidden">
-          <nav className="container-fs flex flex-col gap-1 py-4">
-            {NAV_LINKS.map((link) => (
+        <div className="mx-auto mt-2 max-w-340 rounded-3xl border border-black/5 bg-white p-3 shadow-lg lg:hidden">
+          <nav className="flex flex-col gap-1">
+            {NAV_LINKS.map((link, i) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded px-2 py-3 text-sm font-medium text-white/85 hover:bg-white/5"
+                className={`rounded-2xl px-4 py-3 text-sm font-medium ${
+                  i === 0 ? "bg-forest text-white" : "text-ink/70 hover:bg-paper"
+                }`}
               >
                 {link.label}
               </a>
@@ -78,7 +69,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-sm border border-gold-light/60 px-4 py-3 text-center text-sm font-medium text-white"
+              className="mt-1 rounded-2xl bg-yellow px-4 py-3 text-center text-sm font-semibold text-ink"
             >
               Contact Us
             </a>

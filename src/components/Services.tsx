@@ -2,46 +2,35 @@ import { SERVICES } from "@/lib/content";
 
 export default function Services() {
   return (
-    <section id="what-we-do" className="bg-black py-24 lg:py-32">
-      <div className="container-fs">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
-            What We Do
-          </p>
-          <h2 className="font-display mt-4 text-4xl leading-tight text-white sm:text-[2.75rem]">
-            More than capital &mdash; active, hands-on ownership
-          </h2>
-          <p className="mt-6 leading-relaxed text-white/60">
-            We take an active role in the businesses we own, providing
-            strategic direction, operational support, and resources designed
-            to help them grow and perform at their full potential.
-          </p>
-        </div>
+    <div id="what-we-do" className="rounded-[28px] bg-white p-6 sm:p-8">
+      <span className="inline-block rounded-full bg-paper px-4 py-1.5 text-xs font-medium text-muted">
+        What We Do
+      </span>
+      <h2 className="font-display mt-4 max-w-md text-2xl font-bold leading-tight text-ink sm:text-[1.75rem]">
+        More than capital &mdash; active, hands-on ownership
+      </h2>
 
-        <div className="mt-16 grid gap-px overflow-hidden bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.title}
-                className="group bg-black p-8 transition-colors hover:bg-navy-deep lg:p-10"
-              >
-                <Icon
-                  size={32}
-                  strokeWidth={1.5}
-                  className="text-gold-light"
-                />
-                <h3 className="font-display mt-6 text-xl text-white">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/55">
-                  {service.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        {SERVICES.map((service) => {
+          const Icon = service.icon;
+          return (
+            <div
+              key={service.title}
+              className="rounded-2xl border border-line p-5"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow">
+                <Icon size={18} strokeWidth={1.75} className="text-ink" />
+              </span>
+              <h3 className="font-display mt-4 text-sm font-semibold text-ink">
+                {service.title}
+              </h3>
+              <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                {service.description}
+              </p>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

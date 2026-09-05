@@ -1,62 +1,73 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ABOUT_CARDS } from "@/lib/content";
 
 export default function About() {
   return (
-    <section id="about" className="bg-paper py-24 lg:py-32">
-      <div className="container-fs grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className="relative">
-          <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern glass architecture representing Fallstone's portfolio companies"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 480px, 90vw"
-            />
-          </div>
-          <div className="absolute -bottom-10 -right-6 hidden aspect-square w-40 overflow-hidden border-8 border-paper shadow-xl sm:block lg:-right-10 lg:w-56">
-            <Image
-              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80"
-              alt="Interior of a modern commercial property"
-              fill
-              className="object-cover"
-              sizes="220px"
-            />
+    <div id="about" className="rounded-[28px] bg-white p-3 lg:p-4">
+      <div className="grid gap-3 lg:grid-cols-2">
+        <div className="relative aspect-4/5 overflow-hidden rounded-[22px] sm:aspect-16/10 lg:aspect-auto lg:min-h-105">
+          <Image
+            src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=1200&q=80"
+            alt="Aerial city skyline representing Fallstone's global reach"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 560px, 90vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/5 to-transparent" />
+
+          <span className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-1.5 text-xs font-medium text-ink">
+            About Us
+          </span>
+
+          <div className="absolute inset-x-0 bottom-0 p-6">
+            <p className="font-display max-w-sm text-lg font-semibold leading-snug text-white sm:text-xl">
+              We are a holding company building innovative, sustainable, and
+              lasting businesses across the global economy.
+            </p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/65">
+              Active ownership across a diversified portfolio &mdash; from
+              strategic direction to operational support and resources.
+            </p>
           </div>
         </div>
 
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
-            About Us
-          </p>
-          <h2 className="font-display mt-4 text-4xl leading-tight text-ink sm:text-[2.75rem]">
-            An active owner, not a passive investor
-          </h2>
-          <p className="mt-6 leading-relaxed text-muted">
-            At Fallstone International Holdings, we focus on building,
-            acquiring, and managing businesses with strong potential for
-            long-term growth and value creation. We operate as a diversified
-            holding company with investments across multiple industries,
-            allowing us to build a balanced portfolio while identifying
-            opportunities in different areas of the economy.
-          </p>
-          <p className="mt-4 leading-relaxed text-muted">
-            Our approach goes beyond simply investing in companies. We take
-            an active role in the businesses we own, providing strategic
-            direction, operational support, and resources designed to help
-            them grow and perform at their full potential.
-          </p>
-
-          <a
-            href="#what-we-do"
-            className="mt-8 inline-flex items-center gap-2 border-b-2 border-gold pb-1 text-sm font-semibold uppercase tracking-wider text-ink transition-colors hover:text-gold"
-          >
-            Learn More
-            <ArrowRight size={16} />
-          </a>
+        <div className="flex flex-col gap-3">
+          {ABOUT_CARDS.map((card) => {
+            const Icon = card.icon;
+            const dark = card.variant === "dark";
+            return (
+              <div
+                key={card.title}
+                className={`flex-1 rounded-[22px] p-6 sm:p-7 ${
+                  dark ? "bg-forest text-white" : "bg-paper text-ink"
+                }`}
+              >
+                <span
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+                    dark ? "bg-white/10" : "bg-yellow"
+                  }`}
+                >
+                  <Icon
+                    size={20}
+                    strokeWidth={1.75}
+                    className={dark ? "text-white" : "text-ink"}
+                  />
+                </span>
+                <h3 className="font-display mt-5 text-lg font-semibold">
+                  {card.title}
+                </h3>
+                <p
+                  className={`mt-2 text-sm leading-relaxed ${
+                    dark ? "text-white/60" : "text-muted"
+                  }`}
+                >
+                  {card.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

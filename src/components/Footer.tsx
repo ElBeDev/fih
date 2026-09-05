@@ -1,4 +1,5 @@
 import { NAV_LINKS, FOOTER_INDUSTRY_LINKS } from "@/lib/content";
+import Logo from "@/components/Logo";
 
 function LinkedinIcon() {
   return (
@@ -18,99 +19,95 @@ function XIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-black pt-20 text-white/70">
-      <div className="container-fs grid gap-12 pb-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-        <div>
-          <span className="font-display block text-xl tracking-[0.08em] text-white">
-            FALLSTONE
-          </span>
-          <span className="mt-1 block text-[10px] uppercase tracking-[0.35em] text-gold-light">
-            International Holdings
-          </span>
-          <p className="mt-5 max-w-xs text-sm leading-relaxed">
-            A diversified holding company building, acquiring, and managing
-            businesses with strong potential for long-term growth and value
-            creation.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Company
-          </h4>
-          <ul className="mt-5 space-y-3 text-sm">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-gold-light">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Industries
-          </h4>
-          <ul className="mt-5 space-y-3 text-sm">
-            {FOOTER_INDUSTRY_LINKS.map((label) => (
-              <li key={label}>
-                <a href="#industries" className="transition-colors hover:text-gold-light">
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Stay Connected
-          </h4>
-          <p className="mt-5 text-sm">
-            Subscribe for updates on our portfolio and industry insights.
-          </p>
-          <div className="mt-4 flex border border-white/20">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none"
-            />
-            <button
-              type="button"
-              aria-label="Subscribe"
-              className="bg-gold-light px-5 text-sm font-semibold text-navy-deep"
-            >
-              &rarr;
-            </button>
+    <footer className="px-4 pb-4 pt-3 lg:px-6">
+      <div className="mx-auto max-w-340 rounded-[28px] bg-forest px-6 pt-12 text-white/70 sm:px-10">
+        <div className="grid gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+          <div>
+            <div className="flex items-center gap-2">
+              <Logo />
+              <span className="font-display text-lg font-bold text-white">
+                Fallstone
+              </span>
+            </div>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed">
+              A diversified holding company building, acquiring, and
+              managing businesses with strong potential for long-term
+              growth and value creation.
+            </p>
           </div>
-          <div className="mt-6 flex gap-4">
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="flex h-9 w-9 items-center justify-center border border-white/20 transition-colors hover:border-gold-light hover:text-gold-light"
-            >
-              <LinkedinIcon />
-            </a>
-            <a
-              href="#"
-              aria-label="X (Twitter)"
-              className="flex h-9 w-9 items-center justify-center border border-white/20 transition-colors hover:border-gold-light hover:text-gold-light"
-            >
-              <XIcon />
-            </a>
+
+          <div>
+            <h4 className="text-sm font-semibold text-white">Company</h4>
+            <ul className="mt-5 space-y-3 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="transition-colors hover:text-lime">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-white">Industries</h4>
+            <ul className="mt-5 space-y-3 text-sm">
+              {FOOTER_INDUSTRY_LINKS.map((label) => (
+                <li key={label}>
+                  <a href="#industries" className="transition-colors hover:text-lime">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-white">Stay Connected</h4>
+            <p className="mt-5 text-sm">
+              Subscribe for updates on our portfolio and industry insights.
+            </p>
+            <div className="mt-4 flex overflow-hidden rounded-full border border-white/15">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none"
+              />
+              <button
+                type="button"
+                aria-label="Subscribe"
+                className="bg-yellow px-5 text-sm font-semibold text-ink"
+              >
+                &rarr;
+              </button>
+            </div>
+            <div className="mt-6 flex gap-3">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-lime hover:text-lime"
+              >
+                <LinkedinIcon />
+              </a>
+              <a
+                href="#"
+                aria-label="X (Twitter)"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-lime hover:text-lime"
+              >
+                <XIcon />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-white/10 py-6">
-        <div className="container-fs flex flex-col items-center justify-between gap-3 text-xs text-white/40 sm:flex-row">
-          <p>
-            &copy; {new Date().getFullYear()} Fallstone International
-            Holdings. All rights reserved.
-          </p>
-          <p>Managing approximately $2.5B in assets across 50+ companies.</p>
+        <div className="border-t border-white/10 py-6">
+          <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/40 sm:flex-row">
+            <p>
+              &copy; {new Date().getFullYear()} Fallstone International
+              Holdings. All rights reserved.
+            </p>
+            <p>Managing approximately $2.5B in assets across 50+ companies.</p>
+          </div>
         </div>
       </div>
     </footer>

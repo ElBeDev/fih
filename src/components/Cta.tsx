@@ -1,23 +1,23 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Cta() {
   return (
-    <section id="contact" className="bg-gold-light">
-      <div className="container-fs flex flex-col items-start justify-between gap-8 py-16 lg:flex-row lg:items-center lg:py-20">
+    <section id="contact" className="px-4 py-3 lg:px-6">
+      <div className="mx-auto flex max-w-340 flex-col items-start justify-between gap-6 rounded-[28px] bg-yellow p-8 sm:flex-row sm:items-center sm:p-10">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-navy-deep/70">
+          <span className="inline-block rounded-full bg-black/10 px-4 py-1.5 text-xs font-medium text-ink/70">
             Get In Touch
-          </p>
-          <h2 className="font-display mt-3 max-w-xl text-3xl leading-tight text-navy-deep sm:text-4xl">
+          </span>
+          <h2 className="font-display mt-3 max-w-xl text-2xl font-bold leading-tight text-ink sm:text-3xl">
             Let&apos;s build lasting value together.
           </h2>
         </div>
         <a
           href="mailto:info@fallstoneholdings.com"
-          className="inline-flex items-center gap-2 whitespace-nowrap bg-navy-deep px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-forest px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
         >
           Contact Us
-          <ArrowRight size={16} />
+          <ArrowUpRight size={16} />
         </a>
       </div>
     </section>
