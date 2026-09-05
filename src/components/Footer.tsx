@@ -20,7 +20,7 @@ function XIcon() {
 export default function Footer() {
   return (
     <footer className="px-4 pb-4 pt-3 lg:px-6">
-      <div className="mx-auto max-w-340 rounded-[28px] bg-forest px-6 pt-12 text-white/70 sm:px-10">
+      <div className="mx-auto max-w-340 rounded-3xl sm:rounded-[28px] bg-forest px-6 pt-12 text-white/70 sm:px-10">
         <div className="grid gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-2">

@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function Services() {
   return (
-    <div id="what-we-do" className="rounded-[28px] bg-white p-6 sm:p-8">
+    <div id="what-we-do" className="rounded-3xl sm:rounded-[28px] bg-white p-6 sm:p-8">
       <h2 className="font-display max-w-md text-2xl font-bold leading-tight text-ink sm:text-[1.75rem]">
         More than capital: active, hands-on ownership
       </h2>

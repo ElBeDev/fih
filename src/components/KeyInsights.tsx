@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function KeyInsights() {
   return (
-    <div className="rounded-[28px] bg-forest p-6 text-white sm:p-8">
+    <div className="rounded-3xl sm:rounded-[28px] bg-forest p-6 text-white sm:p-8">
       <h2 className="font-display text-2xl font-bold leading-tight sm:text-[1.75rem]">
         Trusted Across Multiple Industries
       </h2>

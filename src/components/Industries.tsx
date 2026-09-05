@@ -9,7 +9,7 @@ export default function Industries() {
 
   return (
     <section id="industries" className="px-4 py-3 lg:px-6">
-      <div className="mx-auto max-w-340 rounded-[28px] bg-white p-5 sm:p-8 lg:p-10">
+      <div className="mx-auto max-w-340 rounded-3xl sm:rounded-[28px] bg-white p-5 sm:p-8 lg:p-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="inline-block rounded-full bg-paper px-4 py-1.5 text-xs font-medium text-muted">

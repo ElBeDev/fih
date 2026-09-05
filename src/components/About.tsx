@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 
 export default function About() {
   return (
-    <div id="about" className="rounded-[28px] bg-white p-3 lg:p-4">
+    <div id="about" className="rounded-3xl sm:rounded-[28px] bg-white p-3 lg:p-4">
       <div className="grid gap-3 lg:grid-cols-2">
         <div className="relative aspect-4/5 overflow-hidden rounded-[22px] sm:aspect-16/10 lg:aspect-auto lg:min-h-105">
           <Image

@@ -7,6 +7,7 @@ import Industries from "@/components/Industries";
 import Approach from "@/components/Approach";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
+import MobileCta from "@/components/MobileCta";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
+      <MobileCta />
     </>
   );
 }

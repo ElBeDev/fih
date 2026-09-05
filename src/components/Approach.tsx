@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export default function Approach() {
   return (
     <section id="approach" className="px-4 py-3 lg:px-6">
-      <div className="mx-auto max-w-340 overflow-hidden rounded-[28px] bg-forest">
+      <div className="mx-auto max-w-340 overflow-hidden rounded-3xl sm:rounded-[28px] bg-forest">
         <div className="grid gap-3 p-3 lg:grid-cols-2 lg:gap-0 lg:p-4">
           <div className="relative aspect-16/11 overflow-hidden rounded-[22px] lg:aspect-auto lg:min-h-120">
             <Image
