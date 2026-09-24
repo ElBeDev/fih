@@ -8,7 +8,8 @@ Resumen de todo lo que se construyó en esta sesión, de cero al estado actual d
 - **Tailwind CSS v4**
 - **lucide-react** para íconos
 - **motion** (ex Framer Motion) para las animaciones de scroll-reveal
-- Repo: https://github.com/ElBeDev/fih — pensado para desplegar en Vercel (auto-detecta Next.js, sin variables de entorno necesarias)
+- Repo: https://github.com/ElBeDev/fih — desplegado en Vercel (auto-detecta Next.js, sin variables de entorno necesarias)
+- Dominio: https://www.fallstoneholdingsintl.com (canónico). `fallstoneholdingsintl.com` redirige con 308 a `www`; `fih-liard.vercel.app` sigue activo en Vercel
 
 ---
 
@@ -59,9 +60,18 @@ El usuario pidió instalar y usar el skill de terceros `Leonxlnx/taste-skill` (`
 
 ---
 
+## Dominio y SEO
+
+- `src/lib/site.ts` centraliza nombre, URL canónica, email y descripción del sitio.
+- `layout.tsx`: `metadataBase`, `canonical`, Open Graph y Twitter card apuntando a `www.fallstoneholdingsintl.com`.
+- `robots.ts` y `sitemap.ts` generan `/robots.txt` y `/sitemap.xml` con el dominio real.
+- `opengraph-image.tsx` genera la imagen de preview (1200×630) para cuando se comparte el link.
+
+---
+
 ## Pendientes / decisiones abiertas
 
-- El email de contacto (`info@fallstoneholdings.com`) es un placeholder — falta el real.
+- El email de contacto ahora es `info@fallstoneholdingsintl.com` (en `src/lib/site.ts`) — confirmar que el buzón exista en el dominio.
 - Los links de LinkedIn/X en el footer apuntan a `#` — falta la URL real de las redes de Fallstone.
 - Dark mode: no implementado (quedó fuera de alcance de este pase, se puede agregar si se pide).
 - Librería de íconos: sigue siendo `lucide-react` en vez de Phosphor/Tabler (recomendación del skill, no bloqueante).

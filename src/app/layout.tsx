@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -14,9 +15,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fallstone International Holdings",
-  description:
-    "Fallstone International Holdings builds, acquires, and manages businesses with strong potential for long-term growth and value creation across technology, healthcare, manufacturing, financial services, real estate, and energy.",
+  metadataBase: new URL(SITE.url),
+  title: SITE.name,
+  description: SITE.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: SITE.name,
+    title: SITE.name,
+    description: SITE.description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.name,
+    description: SITE.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

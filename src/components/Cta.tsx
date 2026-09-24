@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { SITE } from "@/lib/site";
 
 export default function Cta() {
   return (
@@ -10,7 +11,7 @@ export default function Cta() {
             Let&apos;s build lasting value together.
           </h2>
           <a
-            href="mailto:info@fallstoneholdings.com"
+            href={`mailto:${SITE.email}`}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-forest px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:w-fit"
           >
             Get in Touch
